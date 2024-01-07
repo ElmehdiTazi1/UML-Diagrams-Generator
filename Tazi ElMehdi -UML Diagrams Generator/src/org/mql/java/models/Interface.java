@@ -9,11 +9,8 @@ public class Interface {
 	public Interface() {
 		// TODO Auto-generated constructor stub
 	}
-	public Interface(String nom, Interface[] subClasses, Method[] methodes) {
+	public Interface(String interfaceName) {
 		super();
-		this.nom = nom;
-		this.subClasses = subClasses;
-		this.methodes = methodes;
 	}
 	public String getNom() {
 		return nom;

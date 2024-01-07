@@ -2,6 +2,7 @@ package org.mql.java;
 
 
 
+import org.mql.java.models.ProjetJava;
 import org.mql.java.reflection.PackageExtractor;
 
 public class Examples {
@@ -16,7 +17,8 @@ public class Examples {
 	       //projectName = "Tazi ElMehdi -UML and Project Parser";
 	       // PackageExtractor.extractPackages(projectName);
 	       projectName = "p04-XML Parsers";
-	        PackageExtractor.extractPackages(projectName);
+	        //PackageExtractor.extractPackages(projectName);
+	       new ProjetJava(projectName);
 	    }
 		
 	

@@ -9,7 +9,7 @@ import org.mql.java.log.LogLevel;
 import org.mql.java.log.Logger;
 
 public class PackageExtractor {
-	private static Logger logger = new ConsoleLogger();
+	private static Logger logger;
 
     public static List<String> extractPackages(String projectName) {
         // Spécifiez le chemin de base du projet
@@ -21,11 +21,6 @@ public class PackageExtractor {
         // Appel de la fonction récursive pour parcourir le répertoire du projet
         exploreProject(new File(basePath), "", packages);
 		log(LogLevel.DEBUG,"Chemin du Projet => " +basePath);
-        for (String packageName : packages) {
-    	log(LogLevel.Package,packageName);
-            ClassExtractor.explorePackage(basePath,packageName,packages);
-
-        }
         return packages;
     }
 

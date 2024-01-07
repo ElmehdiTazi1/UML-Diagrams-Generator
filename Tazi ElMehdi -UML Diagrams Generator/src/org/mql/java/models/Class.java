@@ -51,15 +51,9 @@ public class Class {
 	public void setInterfaces(Interface[] interfaces) {
 		this.interfaces = interfaces;
 	}
-	public Class(String nom, Field[] fields, Constructor[] constructors, Method[] methods, Class supClass,
-			Interface[] interfaces) {
+	public Class(String className) {
 		super();
-		this.nom = nom;
-		this.fields = fields;
-		this.constructors = constructors;
-		this.methods = methods;
-		this.supClass = supClass;
-		this.interfaces = interfaces;
+
 	}
 
 }
