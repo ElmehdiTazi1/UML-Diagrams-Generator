@@ -1,8 +1,13 @@
 package org.mql.java.models;
 
+import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.net.URL;
+import java.net.URLClassLoader;
+
+import static org.mql.java.reflection.ClassParser.*;
 
 
 public class Class {
@@ -53,7 +58,7 @@ public class Class {
 	}
 	public Class(String className) {
 		super();
+		loadClass(new File(className+".class"));
 
 	}
-
 }

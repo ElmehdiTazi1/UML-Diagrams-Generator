@@ -12,12 +12,8 @@ public class Examples {
 	}
 
 	void exp01() {
-		 String projectName = "p03-Annotations and Reflection";
-	        //PackageExtractor.extractPackages(projectName);
-	       //projectName = "Tazi ElMehdi -UML and Project Parser";
-	       // PackageExtractor.extractPackages(projectName);
-	       projectName = "p04-XML Parsers";
-	        //PackageExtractor.extractPackages(projectName);
+		   String projectName = "C:/Users/Mehdi/MQL/p02-Generics";
+		   String mehdi= "mehdi";
 	       new ProjetJava(projectName);
 	    }
 		
@@ -29,3 +25,4 @@ public class Examples {
 	}
 
 }
+

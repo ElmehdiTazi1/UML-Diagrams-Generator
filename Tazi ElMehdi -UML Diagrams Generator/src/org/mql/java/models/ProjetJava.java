@@ -13,9 +13,7 @@ public class ProjetJava {
 		this.name=projectName;
 		test=PackageExtractor.extractPackages(name);
 		for (String p : test) {
-			System.out.println(p);
-			packages.add(new Package(projectName,p));
+			packages.add(new Package(p));
 		}
-	}
-
+		}
 }

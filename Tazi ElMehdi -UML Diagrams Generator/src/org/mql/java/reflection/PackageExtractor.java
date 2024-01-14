@@ -9,49 +9,43 @@ import org.mql.java.log.LogLevel;
 import org.mql.java.log.Logger;
 
 public class PackageExtractor {
-	private static Logger logger;
+	private static Logger logger = new ConsoleLogger() ;
 
-    public static List<String> extractPackages(String projectName) {
-        // Spécifiez le chemin de base du projet
-        String basePath = "C:\\Users\\Mehdi\\MQL\\" + projectName;
+	public static List<String> extractPackages(String projectName) {
+		List<String> packages = new Vector<>();
+		exploreProject(projectName, new File(projectName), "", packages);
+		log(LogLevel.DEBUG, "Chemin du Projet => " + projectName);
+		return packages;
+	}
 
-        // Utilisez un ensemble pour stocker les packages uniques
-        List<String> packages = new Vector<>();
+	private static void exploreProject(String projectName, File directory, String currentPackage,
+			List<String> packages) {
+		File[] files = directory.listFiles();
+		if (files != null) {
+			for (File file : files) {
+				if (file.isDirectory()) {
+					String newPackage = currentPackage + file.getName() + "/";
+					exploreProject(projectName, file, newPackage, packages);
+				} else if (file.isFile() && file.getName().endsWith(".class")) {
+					String packageName = currentPackage.substring(0, currentPackage.length() - 1); // Supprimez le
+					if (!packages.contains(projectName + "/" + packageName)) {
+						packages.add(projectName + "/" + packageName);
+						log(LogLevel.Package, projectName + "/" + packageName);
+					}
 
-        // Appel de la fonction récursive pour parcourir le répertoire du projet
-        exploreProject(new File(basePath), "", packages);
-		log(LogLevel.DEBUG,"Chemin du Projet => " +basePath);
-        return packages;
-    }
+				}
+			}
+		}
+	}
 
-    private static void exploreProject(File directory, String currentPackage, List<String> packages) {
-        // Obtenez la liste des fichiers dans le répertoire
-        File[] files = directory.listFiles();
-
-        if (files != null) {
-            for (File file : files) {
-                if (file.isDirectory()) {
-                    // Si c'est un répertoire, récursion avec le nouveau package
-                    String newPackage = currentPackage + file.getName() + ".";
-                    exploreProject(file, newPackage, packages);
-                } else if (file.isFile() && file.getName().endsWith(".java")) {
-                    // Si c'est un fichier Java, ajoutez le package à l'ensemble
-                    String packageName = currentPackage.substring(0, currentPackage.length() - 1); // Supprimez le dernier point
-                    if(!packages.contains(packageName))
-                    packages.add(packageName);
-                  
-                }
-            }
-        }
-    }
-    public void setLogger(Logger logger) {
+	public void setLogger(Logger logger) {
 		this.logger = logger;
 	}
-	private static void log(LogLevel level,String msg) {
-		if(logger!= null) {
+
+	private static void log(LogLevel level, String msg) {
+		if (logger != null) {
 			logger.log(level, msg);
 		}
 	}
 
 }
-    

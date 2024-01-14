@@ -22,16 +22,13 @@ public class Package {
 		this.classes = classes;
 	}
 	
-	public Package(String projectName,String nom) {
+	public Package(String nom) {
 		super();
 		this.nom = nom;
-		className=ClassExtractor.explorePackage(projectName, nom);
-		
+		className=ClassExtractor.explorePackage(nom);
 		for (String string : className) {
-			System.out.println(string);
 			classes.add(new Class(string));
-		}
-		
+		}		
 	}
 
 }
