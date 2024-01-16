@@ -8,7 +8,19 @@ import org.mql.java.reflection.PackageExtractor;
 public class ProjetJava {
     private String name;
     private List<Package> packages= new Vector<>();
-    private List<String> test;
+    public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public List<Package> getPackages() {
+		return packages;
+	}
+	public void setPackages(List<Package> packages) {
+		this.packages = packages;
+	}
+	private List<String> test;
 	public ProjetJava(String projectName) {
 		this.name=projectName;
 		test=PackageExtractor.extractPackages(name);

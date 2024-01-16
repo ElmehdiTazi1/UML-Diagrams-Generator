@@ -6,5 +6,9 @@ public enum LogLevel {
     WARNING,
     ERROR,
     Package,
-    Class
+    Class,
+    field,
+    method,
+    subClass,
+    constructor
     }

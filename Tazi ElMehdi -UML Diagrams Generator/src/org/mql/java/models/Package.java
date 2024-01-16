@@ -27,7 +27,7 @@ public class Package {
 		this.nom = nom;
 		className=ClassExtractor.explorePackage(nom);
 		for (String string : className) {
-			classes.add(new Class(string));
+			classes.add(new Class(string+".class"));
 		}		
 	}
 
