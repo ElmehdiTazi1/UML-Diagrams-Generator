@@ -69,8 +69,6 @@ public class XMLGenerator {
 		for (Field field : aClass.getFields()) {
 			Element fieldElement = document.createElement("field");
 			fieldElement.setAttribute("name", field.getName());
-			// Ajouter d'autres attributs du champ si nécessaire
-
 			fieldsElement.appendChild(fieldElement);
 		}
 		classElement.appendChild(fieldsElement);

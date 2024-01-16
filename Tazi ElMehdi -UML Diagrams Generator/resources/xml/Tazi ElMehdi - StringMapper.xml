@@ -1,1 +1,230 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><projetjava name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper"><package name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper/bin/org/mql/java/model"><class name="org.mql.java.model.Author$InnerClass"><nom>org.mql.java.model.Author$InnerClass</nom><fields><field name="innerData"/><field name="this$0"/></fields><constructors><constructor name="public org.mql.java.model.Author$InnerClass(org.mql.java.model.Author,java.lang.String)"/></constructors><methods><method name="public void org.mql.java.model.Author$InnerClass.setInnerData(java.lang.String)"/><method name="public java.lang.String org.mql.java.model.Author$InnerClass.getInnerData()"/></methods><superclass>java.lang.Object</superclass><interfaces/></class><class name="org.mql.java.model.Author"><nom>org.mql.java.model.Author</nom><fields><field name="nom"/><field name="prenom"/><field name="d"/><field name="id"/><field name="pere"/></fields><constructors><constructor name="public org.mql.java.model.Author()"/><constructor name="public org.mql.java.model.Author(java.lang.String,java.lang.String,org.mql.java.model.Date,int)"/></constructors><methods><method name="public static void org.mql.java.model.Author.test()"/><method name="public int org.mql.java.model.Author.getId()"/><method name="public java.lang.String org.mql.java.model.Author.getNom()"/><method name="public void org.mql.java.model.Author.setNom(java.lang.String)"/><method name="public void org.mql.java.model.Author.setId(int)"/><method name="public void org.mql.java.model.Author.setPrenom(java.lang.String)"/><method name="public org.mql.java.model.Author org.mql.java.model.Author.getPere()"/><method name="public org.mql.java.model.Date org.mql.java.model.Author.getD()"/><method name="public void org.mql.java.model.Author.setD(org.mql.java.model.Date)"/><method name="public java.lang.String org.mql.java.model.Author.getPrenom()"/><method name="public void org.mql.java.model.Author.setPere(org.mql.java.model.Author)"/></methods><superclass/><interfaces/></class><class name="org.mql.java.model.Date"><nom>org.mql.java.model.Date</nom><fields><field name="day"/><field name="month"/><field name="year"/></fields><constructors><constructor name="public org.mql.java.model.Date(int,int,int)"/><constructor name="public org.mql.java.model.Date()"/></constructors><methods><method name="public java.lang.String org.mql.java.model.Date.toString()"/><method name="public int org.mql.java.model.Date.getYear()"/><method name="public int org.mql.java.model.Date.getMonth()"/><method name="public void org.mql.java.model.Date.setMonth(int)"/><method name="public void org.mql.java.model.Date.setYear(int)"/><method name="public int org.mql.java.model.Date.getDay()"/><method name="public void org.mql.java.model.Date.setDay(int)"/></methods><superclass/><interfaces/></class><class name="org.mql.java.model.Person"><nom>org.mql.java.model.Person</nom><fields/><constructors><constructor name="public org.mql.java.model.Person()"/></constructors><methods/><superclass>java.lang.Object</superclass><interfaces/></class></package><package name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper/bin/org/mql/java/reflections"><class name="org.mql.java.reflections.ClassParser"><nom>org.mql.java.reflections.ClassParser</nom><fields><field name="squelette"/><field name="res"/></fields><constructors><constructor name="public org.mql.java.reflections.ClassParser()"/></constructors><methods><method name="public static java.util.Vector org.mql.java.reflections.ClassParser.parse(java.lang.String)"/><method name="private static void org.mql.java.reflections.ClassParser.parser(java.lang.String)"/><method name="private static void org.mql.java.reflections.ClassParser.getClassSignature(java.lang.Class)"/><method name="private static int org.mql.java.reflections.ClassParser.getClassField(java.lang.Class)"/><method name="private static int org.mql.java.reflections.ClassParser.getClassMethod(java.lang.Class)"/><method name="public static java.util.Vector org.mql.java.reflections.ClassParser.squelette(java.lang.String)"/><method name="private static void org.mql.java.reflections.ClassParser.affiche()"/><method name="private static void org.mql.java.reflections.ClassParser.getClassConstructor(java.lang.Class)"/></methods><superclass>java.lang.Object</superclass><interfaces/></class><class name="org.mql.java.reflections.StringMapper"><nom>org.mql.java.reflections.StringMapper</nom><fields><field name="objs"/></fields><constructors><constructor name="public org.mql.java.reflections.StringMapper()"/></constructors><methods><method name="public static java.lang.String org.mql.java.reflections.StringMapper.toString(java.lang.Object)"/><method name="public static java.lang.String org.mql.java.reflections.StringMapper.toDeepString(java.lang.Object)"/></methods><superclass>java.lang.Object</superclass><interfaces/></class></package><package name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper/bin/org/mql/java/test"><class name="org.mql.java.test.Examples"><nom>org.mql.java.test.Examples</nom><fields/><constructors><constructor name="public org.mql.java.test.Examples()"/></constructors><methods><method name="public static void org.mql.java.test.Examples.main(java.lang.String[])"/><method name="public void org.mql.java.test.Examples.exp02()"/><method name="public void org.mql.java.test.Examples.exp01()"/><method name="public void org.mql.java.test.Examples.exp03()"/><method name="public void org.mql.java.test.Examples.exp04()"/></methods><superclass>java.lang.Object</superclass><interfaces/></class></package><package name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper/bin/org/mql/java/uis"><class name="org.mql.java.uis.ClassParserFrame$ItemListener"><nom>org.mql.java.uis.ClassParserFrame$ItemListener</nom><fields><field name="this$0"/></fields><constructors><constructor name="public org.mql.java.uis.ClassParserFrame$ItemListener(org.mql.java.uis.ClassParserFrame)"/></constructors><methods><method name="public void org.mql.java.uis.ClassParserFrame$ItemListener.actionPerformed(java.awt.event.ActionEvent)"/></methods><superclass>java.lang.Object</superclass><interfaces/></class><class name="org.mql.java.uis.ClassParserFrame"><nom>org.mql.java.uis.ClassParserFrame</nom><fields><field name="serialVersionUID"/><field name="labelSize"/><field name="container"/><field name="l1"/><field name="t1"/><field name="b"/><field name="res"/></fields><constructors><constructor name="public org.mql.java.uis.ClassParserFrame(java.lang.String,int)"/></constructors><methods><method name="public void org.mql.java.uis.ClassParserFrame.add(java.lang.String,int)"/><method name="public void org.mql.java.uis.ClassParserFrame.add(java.lang.String)"/></methods><superclass>javax.swing.JPanel</superclass><interfaces/></class><class name="org.mql.java.uis.Result"><nom>org.mql.java.uis.Result</nom><fields/><constructors><constructor name="public org.mql.java.uis.Result(java.lang.String)"/></constructors><methods/><superclass>javax.swing.JFrame</superclass><interfaces/></class></package></projetjava>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<projetjava
+	name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper">
+	<package
+		name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper/bin/org/mql/java/model">
+		<class name="org.mql.java.model.Author$InnerClass">
+			<nom>org.mql.java.model.Author$InnerClass</nom>
+			<fields>
+				<field name="innerData" />
+				<field name="this$0" />
+			</fields>
+			<constructors>
+				<constructor
+					name="public org.mql.java.model.Author$InnerClass(org.mql.java.model.Author,java.lang.String)" />
+			</constructors>
+			<methods>
+				<method
+					name="public java.lang.String org.mql.java.model.Author$InnerClass.getInnerData()" />
+				<method
+					name="public void org.mql.java.model.Author$InnerClass.setInnerData(java.lang.String)" />
+			</methods>
+			<superclass>java.lang.Object</superclass>
+			<interfaces />
+		</class>
+		<class name="org.mql.java.model.Author">
+			<nom>org.mql.java.model.Author</nom>
+			<fields>
+				<field name="nom" />
+				<field name="prenom" />
+				<field name="d" />
+				<field name="id" />
+				<field name="pere" />
+			</fields>
+			<constructors>
+				<constructor
+					name="public org.mql.java.model.Author(java.lang.String,java.lang.String,org.mql.java.model.Date,int)" />
+				<constructor name="public org.mql.java.model.Author()" />
+			</constructors>
+			<methods>
+				<method
+					name="public java.lang.String org.mql.java.model.Author.getNom()" />
+				<method
+					name="public void org.mql.java.model.Author.setNom(java.lang.String)" />
+				<method
+					name="public org.mql.java.model.Date org.mql.java.model.Author.getD()" />
+				<method
+					name="public void org.mql.java.model.Author.setD(org.mql.java.model.Date)" />
+				<method
+					name="public void org.mql.java.model.Author.setId(int)" />
+				<method
+					name="public void org.mql.java.model.Author.setPrenom(java.lang.String)" />
+				<method
+					name="public void org.mql.java.model.Author.setPere(org.mql.java.model.Author)" />
+				<method
+					name="public java.lang.String org.mql.java.model.Author.getPrenom()" />
+				<method
+					name="public org.mql.java.model.Author org.mql.java.model.Author.getPere()" />
+				<method
+					name="public static void org.mql.java.model.Author.test()" />
+				<method name="public int org.mql.java.model.Author.getId()" />
+			</methods>
+			<superclass />
+			<interfaces />
+		</class>
+		<class name="org.mql.java.model.Date">
+			<nom>org.mql.java.model.Date</nom>
+			<fields>
+				<field name="day" />
+				<field name="month" />
+				<field name="year" />
+			</fields>
+			<constructors>
+				<constructor
+					name="public org.mql.java.model.Date(int,int,int)" />
+				<constructor name="public org.mql.java.model.Date()" />
+			</constructors>
+			<methods>
+				<method
+					name="public void org.mql.java.model.Date.setDay(int)" />
+				<method
+					name="public java.lang.String org.mql.java.model.Date.toString()" />
+				<method name="public int org.mql.java.model.Date.getYear()" />
+				<method name="public int org.mql.java.model.Date.getMonth()" />
+				<method
+					name="public void org.mql.java.model.Date.setMonth(int)" />
+				<method
+					name="public void org.mql.java.model.Date.setYear(int)" />
+				<method name="public int org.mql.java.model.Date.getDay()" />
+			</methods>
+			<superclass />
+			<interfaces />
+		</class>
+		<class name="org.mql.java.model.Person">
+			<nom>org.mql.java.model.Person</nom>
+			<fields />
+			<constructors>
+				<constructor name="public org.mql.java.model.Person()" />
+			</constructors>
+			<methods />
+			<superclass>java.lang.Object</superclass>
+			<interfaces />
+		</class>
+	</package>
+	<package
+		name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper/bin/org/mql/java/reflections">
+		<class name="org.mql.java.reflections.ClassParser">
+			<nom>org.mql.java.reflections.ClassParser</nom>
+			<fields>
+				<field name="squelette" />
+				<field name="res" />
+			</fields>
+			<constructors>
+				<constructor
+					name="public org.mql.java.reflections.ClassParser()" />
+			</constructors>
+			<methods>
+				<method
+					name="private static int org.mql.java.reflections.ClassParser.getClassMethod(java.lang.Class)" />
+				<method
+					name="private static int org.mql.java.reflections.ClassParser.getClassField(java.lang.Class)" />
+				<method
+					name="private static void org.mql.java.reflections.ClassParser.getClassSignature(java.lang.Class)" />
+				<method
+					name="private static void org.mql.java.reflections.ClassParser.affiche()" />
+				<method
+					name="public static java.util.Vector org.mql.java.reflections.ClassParser.squelette(java.lang.String)" />
+				<method
+					name="private static void org.mql.java.reflections.ClassParser.getClassConstructor(java.lang.Class)" />
+				<method
+					name="public static java.util.Vector org.mql.java.reflections.ClassParser.parse(java.lang.String)" />
+				<method
+					name="private static void org.mql.java.reflections.ClassParser.parser(java.lang.String)" />
+			</methods>
+			<superclass>java.lang.Object</superclass>
+			<interfaces />
+		</class>
+		<class name="org.mql.java.reflections.StringMapper">
+			<nom>org.mql.java.reflections.StringMapper</nom>
+			<fields>
+				<field name="objs" />
+			</fields>
+			<constructors>
+				<constructor
+					name="public org.mql.java.reflections.StringMapper()" />
+			</constructors>
+			<methods>
+				<method
+					name="public static java.lang.String org.mql.java.reflections.StringMapper.toDeepString(java.lang.Object)" />
+				<method
+					name="public static java.lang.String org.mql.java.reflections.StringMapper.toString(java.lang.Object)" />
+			</methods>
+			<superclass>java.lang.Object</superclass>
+			<interfaces />
+		</class>
+	</package>
+	<package
+		name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper/bin/org/mql/java/test">
+		<class name="org.mql.java.test.Examples">
+			<nom>org.mql.java.test.Examples</nom>
+			<fields />
+			<constructors>
+				<constructor name="public org.mql.java.test.Examples()" />
+			</constructors>
+			<methods>
+				<method name="public void org.mql.java.test.Examples.exp01()" />
+				<method name="public void org.mql.java.test.Examples.exp02()" />
+				<method name="public void org.mql.java.test.Examples.exp03()" />
+				<method name="public void org.mql.java.test.Examples.exp04()" />
+				<method
+					name="public static void org.mql.java.test.Examples.main(java.lang.String[])" />
+			</methods>
+			<superclass>java.lang.Object</superclass>
+			<interfaces />
+		</class>
+	</package>
+	<package
+		name="C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper/bin/org/mql/java/uis">
+		<class name="org.mql.java.uis.ClassParserFrame$ItemListener">
+			<nom>org.mql.java.uis.ClassParserFrame$ItemListener</nom>
+			<fields>
+				<field name="this$0" />
+			</fields>
+			<constructors>
+				<constructor
+					name="public org.mql.java.uis.ClassParserFrame$ItemListener(org.mql.java.uis.ClassParserFrame)" />
+			</constructors>
+			<methods>
+				<method
+					name="public void org.mql.java.uis.ClassParserFrame$ItemListener.actionPerformed(java.awt.event.ActionEvent)" />
+			</methods>
+			<superclass>java.lang.Object</superclass>
+			<interfaces />
+		</class>
+		<class name="org.mql.java.uis.ClassParserFrame">
+			<nom>org.mql.java.uis.ClassParserFrame</nom>
+			<fields>
+				<field name="serialVersionUID" />
+				<field name="labelSize" />
+				<field name="container" />
+				<field name="l1" />
+				<field name="t1" />
+				<field name="b" />
+				<field name="res" />
+			</fields>
+			<constructors>
+				<constructor
+					name="public org.mql.java.uis.ClassParserFrame(java.lang.String,int)" />
+			</constructors>
+			<methods>
+				<method
+					name="public void org.mql.java.uis.ClassParserFrame.add(java.lang.String,int)" />
+				<method
+					name="public void org.mql.java.uis.ClassParserFrame.add(java.lang.String)" />
+			</methods>
+			<superclass>javax.swing.JPanel</superclass>
+			<interfaces />
+		</class>
+		<class name="org.mql.java.uis.Result">
+			<nom>org.mql.java.uis.Result</nom>
+			<fields />
+			<constructors>
+				<constructor
+					name="public org.mql.java.uis.Result(java.lang.String)" />
+			</constructors>
+			<methods />
+			<superclass>javax.swing.JFrame</superclass>
+			<interfaces />
+		</class>
+	</package>
+</projetjava>
