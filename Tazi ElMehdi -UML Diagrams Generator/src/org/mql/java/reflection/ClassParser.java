@@ -19,7 +19,7 @@ public class ClassParser {
 
 	private static java.lang.Class clazz;
 	private static Logger logger;
-
+    private static String path;
 	public static java.lang.Class<?> loadClass(File file, Boolean drapeau) {
 		java.lang.Class<?> cls = null;
 		if (drapeau) {
@@ -115,21 +115,32 @@ public class ClassParser {
 	}
 
 	private static void setSubClass(Class c) {
+		String s="";
 		if (clazz.getGenericSuperclass() != null) {
-			String s = clazz.getGenericSuperclass().getTypeName();
-			Class sub = new Class(s);
+			if(clazz.getGenericSuperclass().getTypeName().contains("org")) s+=c.getPath();
+			s += clazz.getGenericSuperclass().getTypeName();
+			Class sup = new Class(s);
 			log(LogLevel.subClass, s);
-			c.setSupClass(sub);
+			c.setSupClass(sup);
 		}
 	}
 
 	public static void init(String className, Class c) {
 		Boolean drap = false;
-		if (className.contains("C:/Users/Mehdi/MQL/"))
+		if (className.contains("C:/")) {
 			drap = true;
+		}else if (className.contains("org")) {
+			String s = path+className;
+			drap = true;
+			className=s;
+		}
 		clazz = loadClass(new File(className), drap);
-		System.out.println("class name "+clazz);
 		if(clazz!=null) {
+		if(className.contains("bin")) {
+			c.setPath(className.substring(0,className.indexOf("org")));
+			path=className.substring(0,className.indexOf("org"));
+		}
+		c.setClazz(clazz);
 		setNom(c);
 		setField(c);
 		setConstructeur(c);

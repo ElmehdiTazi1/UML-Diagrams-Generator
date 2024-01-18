@@ -18,7 +18,6 @@ public class ClassExtractor {
 	public static List<String> explorePackage(String packageName) {
 		String test = packageName;
 		File dir = new File(test.split(";")[0]);
-		// System.out.println(dir);
 		File classes[] = dir.listFiles();
 		List<String> res = new Vector<>();
 		for (File f : classes) {

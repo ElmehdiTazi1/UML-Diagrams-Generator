@@ -15,9 +15,9 @@
 			</constructors>
 			<methods>
 				<method
-					name="public java.lang.String org.mql.java.model.Author$InnerClass.getInnerData()" />
-				<method
 					name="public void org.mql.java.model.Author$InnerClass.setInnerData(java.lang.String)" />
+				<method
+					name="public java.lang.String org.mql.java.model.Author$InnerClass.getInnerData()" />
 			</methods>
 			<superclass>java.lang.Object</superclass>
 			<interfaces />
@@ -42,24 +42,24 @@
 				<method
 					name="public void org.mql.java.model.Author.setNom(java.lang.String)" />
 				<method
-					name="public org.mql.java.model.Date org.mql.java.model.Author.getD()" />
-				<method
-					name="public void org.mql.java.model.Author.setD(org.mql.java.model.Date)" />
+					name="public java.lang.String org.mql.java.model.Author.getPrenom()" />
 				<method
 					name="public void org.mql.java.model.Author.setId(int)" />
 				<method
 					name="public void org.mql.java.model.Author.setPrenom(java.lang.String)" />
 				<method
-					name="public void org.mql.java.model.Author.setPere(org.mql.java.model.Author)" />
+					name="public void org.mql.java.model.Author.setD(org.mql.java.model.Date)" />
 				<method
-					name="public java.lang.String org.mql.java.model.Author.getPrenom()" />
+					name="public org.mql.java.model.Date org.mql.java.model.Author.getD()" />
 				<method
 					name="public org.mql.java.model.Author org.mql.java.model.Author.getPere()" />
+				<method
+					name="public void org.mql.java.model.Author.setPere(org.mql.java.model.Author)" />
 				<method
 					name="public static void org.mql.java.model.Author.test()" />
 				<method name="public int org.mql.java.model.Author.getId()" />
 			</methods>
-			<superclass />
+			<superclass>org.mql.java.model.Person</superclass>
 			<interfaces />
 		</class>
 		<class name="org.mql.java.model.Date">
@@ -87,7 +87,7 @@
 					name="public void org.mql.java.model.Date.setYear(int)" />
 				<method name="public int org.mql.java.model.Date.getDay()" />
 			</methods>
-			<superclass />
+			<superclass>org.mql.java.model.Author</superclass>
 			<interfaces />
 		</class>
 		<class name="org.mql.java.model.Person">
@@ -115,15 +115,15 @@
 			</constructors>
 			<methods>
 				<method
-					name="private static int org.mql.java.reflections.ClassParser.getClassMethod(java.lang.Class)" />
-				<method
-					name="private static int org.mql.java.reflections.ClassParser.getClassField(java.lang.Class)" />
-				<method
-					name="private static void org.mql.java.reflections.ClassParser.getClassSignature(java.lang.Class)" />
+					name="public static java.util.Vector org.mql.java.reflections.ClassParser.squelette(java.lang.String)" />
 				<method
 					name="private static void org.mql.java.reflections.ClassParser.affiche()" />
 				<method
-					name="public static java.util.Vector org.mql.java.reflections.ClassParser.squelette(java.lang.String)" />
+					name="private static void org.mql.java.reflections.ClassParser.getClassSignature(java.lang.Class)" />
+				<method
+					name="private static int org.mql.java.reflections.ClassParser.getClassMethod(java.lang.Class)" />
+				<method
+					name="private static int org.mql.java.reflections.ClassParser.getClassField(java.lang.Class)" />
 				<method
 					name="private static void org.mql.java.reflections.ClassParser.getClassConstructor(java.lang.Class)" />
 				<method
@@ -162,10 +162,10 @@
 				<constructor name="public org.mql.java.test.Examples()" />
 			</constructors>
 			<methods>
-				<method name="public void org.mql.java.test.Examples.exp01()" />
-				<method name="public void org.mql.java.test.Examples.exp02()" />
-				<method name="public void org.mql.java.test.Examples.exp03()" />
 				<method name="public void org.mql.java.test.Examples.exp04()" />
+				<method name="public void org.mql.java.test.Examples.exp01()" />
+				<method name="public void org.mql.java.test.Examples.exp03()" />
+				<method name="public void org.mql.java.test.Examples.exp02()" />
 				<method
 					name="public static void org.mql.java.test.Examples.main(java.lang.String[])" />
 			</methods>

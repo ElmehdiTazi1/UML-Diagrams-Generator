@@ -6,6 +6,7 @@ import org.mql.java.models.ProjetJava;
 import org.mql.java.ui.ClassPanel;
 
 import org.mql.java.ui.ProjectPanel;
+import org.mql.java.uml.RelationshipDetector;
 
 import java.awt.Dimension;
 import java.lang.reflect.Field;
@@ -13,6 +14,7 @@ import java.lang.reflect.Field;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
+import org.mql.java.dom.XMLClassDiagramme;
 import org.mql.java.dom.XMLGenerator;
 import org.mql.java.models.Class;
 import org.mql.java.models.Package;
@@ -20,7 +22,7 @@ import org.mql.java.models.Package;
 public class Examples {
 
 	public Examples() {
-		exp04();
+		exp05();
 	}
 
 	void exp01() {
@@ -64,7 +66,15 @@ public class Examples {
 	        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	        frame.setVisible(true);
 	}
-	
+	void exp05() {
+	 	ProjetJava project = new ProjetJava("C:/Users/Mehdi/MQL/Tazi ElMehdi - StringMapper");
+	 	RelationshipDetector.detectRelationships(project);
+	    String outputPath = "resources/xml/Tazi ElMehdi - StringMapper.xml";
+	    XMLGenerator.generateXML(project, outputPath);
+	    outputPath="resources/xml/class diagrame.xml";
+	    XMLClassDiagramme.generateClassDiagram(project, outputPath);
+	 	
+	}
 
 	public static void main(String[] args) {
 		new Examples();
