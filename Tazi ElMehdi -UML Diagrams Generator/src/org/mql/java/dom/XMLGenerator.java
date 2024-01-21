@@ -15,7 +15,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.mql.java.models.Class;
-import org.mql.java.models.Interface;
 import org.mql.java.models.Package;
 import org.mql.java.models.ProjetJava;
 

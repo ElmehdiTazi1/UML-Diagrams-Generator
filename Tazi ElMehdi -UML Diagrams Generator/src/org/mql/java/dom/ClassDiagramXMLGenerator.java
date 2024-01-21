@@ -43,7 +43,7 @@ public class ClassDiagramXMLGenerator {
         writer.writeAttribute("name", aClass.getNom());
         writeFields(writer, aClass.getFields());
         writeMethods(writer, aClass.getMethods());
-        writeRelations(writer, aClass.getSupClass(), aClass.getRelatedClasses());
+        writeRelations(writer, aClass.getSupClass(), aClass.getRelatedClasses(),aClass.getInterfaces());
         writer.writeEndElement();
     }
 
@@ -83,7 +83,7 @@ public class ClassDiagramXMLGenerator {
         writer.writeEndElement();
     }
 
-    private static void writeRelations(XMLStreamWriter writer, Class superClass, List<Class> relatedClasses) throws XMLStreamException {
+    private static void writeRelations(XMLStreamWriter writer, Class superClass, List<Class> relatedClasses,List<Class>interfaces) throws XMLStreamException {
         writer.writeStartElement("relations");
 
         if (superClass != null) {
@@ -92,12 +92,22 @@ public class ClassDiagramXMLGenerator {
             writer.writeAttribute("target", superClass.getNom());
             writer.writeEndElement();
         }
-
+        if(relatedClasses.size()>0) {
         for (Class relatedClass : relatedClasses) {
             writer.writeStartElement("relation");
             writer.writeAttribute("type", "association");
+            if(relatedClass.getNom()!=null)
             writer.writeAttribute("target", relatedClass.getNom());
             writer.writeEndElement();
+        }
+        }
+        if(interfaces.size()>0) {
+        for (Class i : interfaces ) {
+            writer.writeStartElement("relation");
+            writer.writeAttribute("type", "implements");
+            writer.writeAttribute("target", i.getNom());
+            writer.writeEndElement();
+        }
         }
 
         writer.writeEndElement();

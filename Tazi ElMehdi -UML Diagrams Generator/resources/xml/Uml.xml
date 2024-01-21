@@ -1,157 +1,393 @@
 <?xml version="1.0" ?>
 <class_diagram>
-	<class name="org.mql.java.model.Author$InnerClass">
+	<class name="org.mql.java.animation.Examples$ScreenListner">
 		<fields>
-			<field name="-innerData:String"></field>
-			<field name="+this$0:Author"></field>
+			<field name="-counter:int"></field>
+			<field name="+this$0:Examples"></field>
 		</fields>
 		<methods>
-			<method name="+setInnerData(String arg0):void"></method>
-			<method name="+getInnerData():String"></method>
+			<method name="+mousePressed(MouseEvent arg0):void"></method>
+			<method name="+mouseReleased(MouseEvent arg0):void"></method>
+			<method name="+mouseClicked(MouseEvent arg0):void"></method>
+			<method name="+mouseExited(MouseEvent arg0):void"></method>
+			<method name="+mouseEntered(MouseEvent arg0):void"></method>
 		</methods>
 		<relations>
 			<relation type="inheritance" target="java.lang.Object"></relation>
 			<relation type="association"
-				target="org.mql.java.model.Author"></relation>
+				target="org.mql.java.animation.Examples"></relation>
+			<relation type="implements"
+				target="java.awt.event.MouseListener"></relation>
 		</relations>
 	</class>
-	<class name="org.mql.java.model.Author">
-		<fields>
-			<field name="-nom:String"></field>
-			<field name="-prenom:String"></field>
-			<field name="-d:Date"></field>
-			<field name="-id:int"></field>
-			<field name="-pere:Author"></field>
-		</fields>
-		<methods>
-			<method name="+test():void"></method>
-			<method name="+getId():int"></method>
-			<method name="+getNom():String"></method>
-			<method name="+setNom(String arg0):void"></method>
-			<method name="+getPrenom():String"></method>
-			<method name="+setD(Date arg0):void"></method>
-			<method name="+getPere():Author"></method>
-			<method name="+setPrenom(String arg0):void"></method>
-			<method name="+getD():Date"></method>
-			<method name="+setId(int arg0):void"></method>
-			<method name="+setPere(Author arg0):void"></method>
-		</methods>
-		<relations>
-			<relation type="inheritance"
-				target="org.mql.java.model.Person"></relation>
-			<relation type="association"
-				target="org.mql.java.model.Date"></relation>
-			<relation type="association"
-				target="org.mql.java.model.Author"></relation>
-		</relations>
-	</class>
-	<class name="org.mql.java.model.Date">
-		<fields>
-			<field name="-day:int"></field>
-			<field name="-month:int"></field>
-			<field name="-year:int"></field>
-		</fields>
-		<methods>
-			<method name="+toString():String"></method>
-			<method name="+getYear():int"></method>
-			<method name="+getMonth():int"></method>
-			<method name="+setMonth(int arg0):void"></method>
-			<method name="+setYear(int arg0):void"></method>
-			<method name="+getDay():int"></method>
-			<method name="+setDay(int arg0):void"></method>
-		</methods>
-		<relations>
-			<relation type="inheritance"
-				target="org.mql.java.model.Author"></relation>
-		</relations>
-	</class>
-	<class name="org.mql.java.model.Person">
-		<fields></fields>
-		<methods></methods>
-		<relations>
-			<relation type="inheritance" target="java.lang.Object"></relation>
-		</relations>
-	</class>
-	<class name="org.mql.java.reflections.ClassParser">
-		<fields>
-			<field name="+squelette:List"></field>
-			<field name="+res:List"></field>
-		</fields>
-		<methods>
-			<method name="+parse(String arg0):Vector"></method>
-			<method name="+parser(String arg0):void"></method>
-			<method name="+getClassMethod(Class arg0):int"></method>
-			<method name="+getClassSignature(Class arg0):void"></method>
-			<method name="+getClassField(Class arg0):int"></method>
-			<method name="+affiche():void"></method>
-			<method name="+squelette(String arg0):Vector"></method>
-			<method name="+getClassConstructor(Class arg0):void"></method>
-		</methods>
-		<relations>
-			<relation type="inheritance" target="java.lang.Object"></relation>
-		</relations>
-	</class>
-	<class name="org.mql.java.reflections.StringMapper">
-		<fields>
-			<field name="+objs:List"></field>
-		</fields>
-		<methods>
-			<method name="+toString(Object arg0):String"></method>
-			<method name="+toDeepString(Object arg0):String"></method>
-		</methods>
-		<relations>
-			<relation type="inheritance" target="java.lang.Object"></relation>
-		</relations>
-	</class>
-	<class name="org.mql.java.test.Examples">
-		<fields></fields>
-		<methods>
-			<method name="+main(String[] arg0):void"></method>
-			<method name="+exp03():void"></method>
-			<method name="+exp04():void"></method>
-			<method name="+exp01():void"></method>
-			<method name="+exp02():void"></method>
-		</methods>
-		<relations>
-			<relation type="inheritance" target="java.lang.Object"></relation>
-		</relations>
-	</class>
-	<class name="org.mql.java.uis.ClassParserFrame$ItemListener">
-		<fields>
-			<field name="+this$0:ClassParserFrame"></field>
-		</fields>
-		<methods>
-			<method name="+actionPerformed(ActionEvent arg0):void"></method>
-		</methods>
-		<relations>
-			<relation type="inheritance" target="java.lang.Object"></relation>
-			<relation type="association"
-				target="org.mql.java.uis.ClassParserFrame"></relation>
-		</relations>
-	</class>
-	<class name="org.mql.java.uis.ClassParserFrame">
+	<class name="org.mql.java.animation.Examples">
 		<fields>
 			<field name="+serialVersionUID:long"></field>
-			<field name="-labelSize:int"></field>
-			<field name="-container:JPanel"></field>
-			<field name="-l1:JLabel"></field>
-			<field name="-t1:JTextField"></field>
-			<field name="-b:JButton"></field>
-			<field name="-res:JPanel"></field>
+			<field name="-screen:JPanel"></field>
 		</fields>
 		<methods>
-			<method name="+add(String arg0, int arg1):void"></method>
-			<method name="+add(String arg0):void"></method>
+			<method name="+main(String[] arg0):void"></method>
+			<method name="-"></method>
+			<method name="-"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="javax.swing.JFrame"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.animation.Pingouin">
+		<fields>
+			<field name="+serialVersionUID:long"></field>
+			<field name="-runner:Thread"></field>
+			<field name="-x:int"></field>
+			<field name="-y:int"></field>
+			<field name="-width:int"></field>
+			<field name="-height:int"></field>
+			<field name="-src:String[]"></field>
+			<field name="-path:String"></field>
+			<field name="-type:String"></field>
+			<field name="-images:Image[]"></field>
+			<field name="-current:int"></field>
+			<field name="-step:int"></field>
+		</fields>
+		<methods>
+			<method name="+run():void"></method>
+			<method name="+start():void"></method>
+			<method name="-"></method>
+			<method name="+paintComponent(Graphics arg0):void"></method>
+			<method name="-"></method>
+			<method name="+pause(int arg0):void"></method>
+			<method name="-"></method>
+			<method name="-"></method>
 		</methods>
 		<relations>
 			<relation type="inheritance" target="javax.swing.JPanel"></relation>
+			<relation type="association" target="[Ljava.lang.String;"></relation>
+			<relation type="association" target="[Ljava.awt.Image;"></relation>
+			<relation type="implements" target="java.lang.Runnable"></relation>
 		</relations>
 	</class>
-	<class name="org.mql.java.uis.Result">
+	<class name="org.mql.java.animation.Task">
+		<fields>
+			<field name="-runner:Thread"></field>
+		</fields>
+		<methods>
+			<method name="+run():void"></method>
+			<method name="+start():void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+			<relation type="implements" target="java.lang.Runnable"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.Buffer">
+		<fields>
+			<field name="-data:Object[]"></field>
+			<field name="-readHead:int"></field>
+			<field name="-writeHead:int"></field>
+		</fields>
+		<methods>
+			<method name="+write(Object arg0):void"></method>
+			<method name="+read():Object"></method>
+			<method name="+getData():Object[]"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+			<relation type="association" target="[Ljava.lang.Object;"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.Consumer">
+		<fields>
+			<field name="-buffer:Buffer"></field>
+		</fields>
+		<methods>
+			<method name="+run():void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Thread"></relation>
+			<relation type="association" target="org.mql.java.Buffer"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.Context">
 		<fields></fields>
-		<methods></methods>
+		<methods>
+			<method name="+print(String arg0):void"></method>
+			<method name="+pause(int arg0):void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.Examples">
+		<fields></fields>
+		<methods>
+			<method name="+main(String[] arg0):void"></method>
+			<method name="+exp05():void"></method>
+			<method name="+exp06():void"></method>
+			<method name="+exp01():void"></method>
+			<method name="+exp02():void"></method>
+			<method name="+exp04():void"></method>
+			<method name="+exp03():void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.IntWriter">
+		<fields>
+			<field name="-sharedResource:List"></field>
+		</fields>
+		<methods>
+			<method name="+run():void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Thread"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.Processus">
+		<fields></fields>
+		<methods>
+			<method name="+run():void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Thread"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.Producer">
+		<fields>
+			<field name="-buffer:Buffer"></field>
+		</fields>
+		<methods>
+			<method name="+run():void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Thread"></relation>
+			<relation type="association" target="org.mql.java.Buffer"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.Buffer">
+		<fields>
+			<field name="-data:Object[]"></field>
+			<field name="-readHead:int"></field>
+			<field name="-writeHead:int"></field>
+			<field name="-logger:Logger"></field>
+			<field name="-observers:List"></field>
+			<field name="-currentWritePosition:int"></field>
+			<field name="-currentReadPosition:int"></field>
+			<field name="-currentProducer:Thread"></field>
+			<field name="-currentConsumer:Thread"></field>
+			<field name="-element:Object"></field>
+		</fields>
+		<methods>
+			<method name="-"></method>
+			<method name="+add(Observer arg0):void"></method>
+			<method name="+write(Object arg0):void"></method>
+			<method name="+read():Object"></method>
+			<method name="+getData():Object[]"></method>
+			<method name="+getElement():Object"></method>
+			<method name="+notifyObservers():void"></method>
+			<method name="+getCurrentProducer():Thread"></method>
+			<method name="+getWriteHead():int"></method>
+			<method name="+getReadHead():int"></method>
+			<method name="+getCurrentConsumer():Thread"></method>
+			<method name="+setLogger(Logger arg0):void"></method>
+			<method name="+getCurrentReadPosition():int"></method>
+			<method name="+getCurrentWritePosition():int"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+			<relation type="association" target="[Ljava.lang.Object;"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.ConsoleLogger">
+		<fields></fields>
+		<methods>
+			<method name="+log(String arg0, String arg1):void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+			<relation type="implements"
+				target="org.mql.java.semaphores.Logger"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.ConsoleObserver">
+		<fields>
+			<field name="-buffer:Buffer"></field>
+		</fields>
+		<methods>
+			<method name="+update():void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Buffer"></relation>
+			<relation type="implements"
+				target="org.mql.java.semaphores.Observer"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.Consumer">
+		<fields>
+			<field name="-m:Semaphore"></field>
+			<field name="-full:Semaphore"></field>
+			<field name="-empty:Semaphore"></field>
+			<field name="-buffer:Buffer"></field>
+		</fields>
+		<methods>
+			<method name="+run():void"></method>
+			<method name="+toString():String"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Thread"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Semaphore"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Semaphore"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Semaphore"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Buffer"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.FileLogger">
+		<fields>
+			<field name="-source:String"></field>
+			<field name="-messages:List"></field>
+		</fields>
+		<methods>
+			<method name="+log(String arg0, String arg1):void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+			<relation type="implements"
+				target="org.mql.java.semaphores.Logger"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.Logger">
+		<fields></fields>
+		<methods>
+			<method name="+log(String arg0, String arg1):void"></method>
+		</methods>
+		<relations></relations>
+	</class>
+	<class name="org.mql.java.semaphores.Observer">
+		<fields></fields>
+		<methods>
+			<method name="+update():void"></method>
+		</methods>
+		<relations></relations>
+	</class>
+	<class name="org.mql.java.semaphores.PanelObserver">
+		<fields>
+			<field name="+serialVersionUID:long"></field>
+			<field name="-buffer:Buffer"></field>
+			<field name="-margin:int"></field>
+			<field name="-size:int"></field>
+			<field name="-lenght:int"></field>
+		</fields>
+		<methods>
+			<method name="+update():void"></method>
+			<method name="+getPreferredSize():Dimension"></method>
+			<method name="+paintComponent(Graphics arg0):void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="javax.swing.JPanel"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Buffer"></relation>
+			<relation type="implements"
+				target="org.mql.java.semaphores.Observer"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.Producer">
+		<fields>
+			<field name="-m:Semaphore"></field>
+			<field name="-full:Semaphore"></field>
+			<field name="-empty:Semaphore"></field>
+			<field name="-buffer:Buffer"></field>
+		</fields>
+		<methods>
+			<method name="+run():void"></method>
+			<method name="+toString():String"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Thread"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Semaphore"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Semaphore"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Semaphore"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Buffer"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.ProducerConsumer">
+		<fields>
+			<field name="+serialVersionUID:long"></field>
+			<field name="-buffer:Buffer"></field>
+			<field name="-producers:Producer[]"></field>
+			<field name="-consumer:Consumer[]"></field>
+			<field name="-m:Semaphore"></field>
+			<field name="-empty:Semaphore"></field>
+			<field name="-full:Semaphore"></field>
+			<field name="-observer:PanelObserver"></field>
+		</fields>
+		<methods>
+			<method name="+main(String[] arg0):void"></method>
+			<method name="-"></method>
+			<method name="-"></method>
+			<method name="-"></method>
+			<method name="-"></method>
+		</methods>
 		<relations>
 			<relation type="inheritance" target="javax.swing.JFrame"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Buffer"></relation>
+			<relation type="association"></relation>
+			<relation type="association"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Semaphore"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Semaphore"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.Semaphore"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.PanelObserver"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.Semaphore">
+		<fields>
+			<field name="-name:String"></field>
+			<field name="-value:int"></field>
+			<field name="-logger:Logger"></field>
+			<field name="-waitingThreadList:ThreadList"></field>
+		</fields>
+		<methods>
+			<method name="-"></method>
+			<method name="+init(int arg0):void"></method>
+			<method name="-"></method>
+			<method name="-"></method>
+			<method name="+setLogger(Logger arg0):void"></method>
+			<method name="+waitDijkstra():void"></method>
+			<method name="+signalDijkstra():void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+			<relation type="association"
+				target="org.mql.java.semaphores.ThreadList"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.semaphores.ThreadList">
+		<fields>
+			<field name="-name:String"></field>
+			<field name="-list:List"></field>
+		</fields>
+		<methods>
+			<method name="+getName():String"></method>
+			<method name="+remove(Thread arg0):void"></method>
+			<method name="+add(Thread arg0):void"></method>
+			<method name="+getList():List"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
 		</relations>
 	</class>
 </class_diagram>

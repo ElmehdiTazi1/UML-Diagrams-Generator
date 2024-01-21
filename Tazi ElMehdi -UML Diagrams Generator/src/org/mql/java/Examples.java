@@ -56,6 +56,7 @@ public class Examples {
 	void exp04() {
 		ProjetJava project = new ProjetJava("C:/Users/Mehdi/MQL/P05-MultiThreading");
 		RelationshipDetector.detectRelationships(project);
+		ClassDiagramXMLGenerator.generateXML(project, "resources/xml/Uml.xml");
 		JFrame frame = new JFrame("Project Diagram");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ClassDiagramPanel projectPanel = new ClassDiagramPanel(project);

@@ -82,19 +82,26 @@ public class ClassDiagramPanel extends JPanel {
 		for (Package aPackage : project.getPackages()) {
 			for (Class aClass : aPackage.getClasses()) {
 				List<Class> relatedClasses = aClass.getRelatedClasses();
+				List<Class> interfaces = aClass.getInterfaces();
 				Point startPoint = classPosition.get(aClass.getNom());
-				Class supClass = aClass.getSupClass();
-				if (supClass != null) {
-					endPoint = classPosition.get(aClass.getSupClass().getNom());
-					if (endPoint != null)
-						drawArrow(g, startPoint, endPoint, true);
-				}
 				if (startPoint != null && relatedClasses != null) {
+					Class supClass = aClass.getSupClass();
+					if (supClass != null) {
+						endPoint = classPosition.get(aClass.getSupClass().getNom());
+						if (endPoint != null)
+							drawArrow(g, startPoint, endPoint, true);
+					}
 					endPoint = null;
 					for (Class relatedClass : relatedClasses) {
 						endPoint = classPosition.get(relatedClass.getNom());
 						if (endPoint != null) {
 							drawArrow(g, startPoint, endPoint, false);
+						}
+					}
+					for (Class f : interfaces) {
+						endPoint = classPosition.get(f.getNom());
+						if (endPoint != null) {
+							drawArrow(g, startPoint, endPoint, true);
 						}
 					}
 				}

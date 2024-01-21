@@ -14,13 +14,12 @@ public class Class {
     private java.lang.Class clazz;
     private List<Field> fields;
 	@SuppressWarnings("rawtypes")
-	private List<Constructor> constructors;
-	private List <Method>  methods;
+	private List<Constructor> constructors =new Vector<Constructor>();
+	private List <Method>  methods =new Vector<Method>();
 	private Class supClass;
-	private List<Interface>  interfaces;
+	private List<Class> interfaces = new Vector<Class>();
     private List<Class> relatedClasses = new Vector<Class>();
-    private List<Class> aggregatedClasses;
-    private List<Class> composedClasses;
+
     private String path;
 	public List<Class> getRelatedClasses() {
 		return relatedClasses;
@@ -31,18 +30,7 @@ public class Class {
 	public void addRelatedClasses(Class c) {
 		this.relatedClasses.add(c);
 	}
-	public List<Class> getAggregatedClasses() {
-		return aggregatedClasses;
-	}
-	public void setAggregatedClasses(List<Class> aggregatedClasses) {
-		this.aggregatedClasses = aggregatedClasses;
-	}
-	public List<Class> getComposedClasses() {
-		return composedClasses;
-	}
-	public void setComposedClasses(List<Class> composedClasses) {
-		this.composedClasses = composedClasses;
-	}
+	
 	public String getNom() {
 		return nom;
 	}
@@ -75,10 +63,13 @@ public class Class {
 	public void setSupClass(Class supClass) {
 		this.supClass = supClass;
 	}
-	public List<Interface> getInterfaces() {
+	public List<Class> getInterfaces() {
 		return interfaces;
 	}
-	public void setInterfaces(List<Interface> interfaces) {
+	public void addInterface(Class c) {
+		interfaces.add(c);
+	}
+	public void setInterfaces(List<Class> interfaces) {
 		this.interfaces = interfaces;
 	}
 	public void setClazz(java.lang.Class clazz) {

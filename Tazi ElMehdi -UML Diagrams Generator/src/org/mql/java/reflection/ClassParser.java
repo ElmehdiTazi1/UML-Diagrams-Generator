@@ -6,8 +6,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
+import java.lang.reflect.Type;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.List;
 import java.util.Vector;
 
 import org.mql.java.log.ConsoleLogger;
@@ -125,7 +127,14 @@ public class ClassParser {
 			c.setSupClass(sup);
 		}
 	}
-
+	private static void setInterfaces(Class c) {
+		List<Class>interfaces = new Vector<>();
+		Type []t = c.getClazz().getGenericInterfaces();
+		for (int i = 0; i < t.length; i++) {
+			c.addInterface(new Class(t[i].getTypeName()));
+			
+		}
+	}
 	public static void init(String className, Class c) {
 		Boolean drap = false;
 		if (className.contains("C:/")) {
@@ -147,9 +156,12 @@ public class ClassParser {
 		setConstructeur(c);
 		setMethod(c);
 		setSubClass(c);
+		setInterfaces(c);
 		}
 
 	}
+
+
 
 	public void setLogger(Logger logger) {
 		this.logger = logger;
