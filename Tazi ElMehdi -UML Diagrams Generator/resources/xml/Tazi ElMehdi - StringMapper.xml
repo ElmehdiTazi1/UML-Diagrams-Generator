@@ -15,9 +15,9 @@
 			</constructors>
 			<methods>
 				<method
-					name="public void org.mql.java.model.Author$InnerClass.setInnerData(java.lang.String)" />
-				<method
 					name="public java.lang.String org.mql.java.model.Author$InnerClass.getInnerData()" />
+				<method
+					name="public void org.mql.java.model.Author$InnerClass.setInnerData(java.lang.String)" />
 			</methods>
 			<superclass>java.lang.Object</superclass>
 			<interfaces />
@@ -32,11 +32,14 @@
 				<field name="pere" />
 			</fields>
 			<constructors>
+				<constructor name="public org.mql.java.model.Author()" />
 				<constructor
 					name="public org.mql.java.model.Author(java.lang.String,java.lang.String,org.mql.java.model.Date,int)" />
-				<constructor name="public org.mql.java.model.Author()" />
 			</constructors>
 			<methods>
+				<method
+					name="public static void org.mql.java.model.Author.test()" />
+				<method name="public int org.mql.java.model.Author.getId()" />
 				<method
 					name="public java.lang.String org.mql.java.model.Author.getNom()" />
 				<method
@@ -44,20 +47,17 @@
 				<method
 					name="public java.lang.String org.mql.java.model.Author.getPrenom()" />
 				<method
-					name="public void org.mql.java.model.Author.setId(int)" />
-				<method
 					name="public void org.mql.java.model.Author.setPrenom(java.lang.String)" />
-				<method
-					name="public void org.mql.java.model.Author.setD(org.mql.java.model.Date)" />
 				<method
 					name="public org.mql.java.model.Date org.mql.java.model.Author.getD()" />
 				<method
-					name="public org.mql.java.model.Author org.mql.java.model.Author.getPere()" />
+					name="public void org.mql.java.model.Author.setD(org.mql.java.model.Date)" />
+				<method
+					name="public void org.mql.java.model.Author.setId(int)" />
 				<method
 					name="public void org.mql.java.model.Author.setPere(org.mql.java.model.Author)" />
 				<method
-					name="public static void org.mql.java.model.Author.test()" />
-				<method name="public int org.mql.java.model.Author.getId()" />
+					name="public org.mql.java.model.Author org.mql.java.model.Author.getPere()" />
 			</methods>
 			<superclass>org.mql.java.model.Person</superclass>
 			<interfaces />
@@ -76,8 +76,6 @@
 			</constructors>
 			<methods>
 				<method
-					name="public void org.mql.java.model.Date.setDay(int)" />
-				<method
 					name="public java.lang.String org.mql.java.model.Date.toString()" />
 				<method name="public int org.mql.java.model.Date.getYear()" />
 				<method name="public int org.mql.java.model.Date.getMonth()" />
@@ -86,6 +84,8 @@
 				<method
 					name="public void org.mql.java.model.Date.setYear(int)" />
 				<method name="public int org.mql.java.model.Date.getDay()" />
+				<method
+					name="public void org.mql.java.model.Date.setDay(int)" />
 			</methods>
 			<superclass>org.mql.java.model.Author</superclass>
 			<interfaces />
@@ -115,21 +115,21 @@
 			</constructors>
 			<methods>
 				<method
-					name="public static java.util.Vector org.mql.java.reflections.ClassParser.squelette(java.lang.String)" />
+					name="public static java.util.Vector org.mql.java.reflections.ClassParser.parse(java.lang.String)" />
 				<method
-					name="private static void org.mql.java.reflections.ClassParser.affiche()" />
-				<method
-					name="private static void org.mql.java.reflections.ClassParser.getClassSignature(java.lang.Class)" />
+					name="private static void org.mql.java.reflections.ClassParser.parser(java.lang.String)" />
 				<method
 					name="private static int org.mql.java.reflections.ClassParser.getClassMethod(java.lang.Class)" />
 				<method
 					name="private static int org.mql.java.reflections.ClassParser.getClassField(java.lang.Class)" />
 				<method
+					name="private static void org.mql.java.reflections.ClassParser.getClassSignature(java.lang.Class)" />
+				<method
+					name="public static java.util.Vector org.mql.java.reflections.ClassParser.squelette(java.lang.String)" />
+				<method
+					name="private static void org.mql.java.reflections.ClassParser.affiche()" />
+				<method
 					name="private static void org.mql.java.reflections.ClassParser.getClassConstructor(java.lang.Class)" />
-				<method
-					name="public static java.util.Vector org.mql.java.reflections.ClassParser.parse(java.lang.String)" />
-				<method
-					name="private static void org.mql.java.reflections.ClassParser.parser(java.lang.String)" />
 			</methods>
 			<superclass>java.lang.Object</superclass>
 			<interfaces />
@@ -145,9 +145,9 @@
 			</constructors>
 			<methods>
 				<method
-					name="public static java.lang.String org.mql.java.reflections.StringMapper.toDeepString(java.lang.Object)" />
-				<method
 					name="public static java.lang.String org.mql.java.reflections.StringMapper.toString(java.lang.Object)" />
+				<method
+					name="public static java.lang.String org.mql.java.reflections.StringMapper.toDeepString(java.lang.Object)" />
 			</methods>
 			<superclass>java.lang.Object</superclass>
 			<interfaces />
@@ -162,12 +162,12 @@
 				<constructor name="public org.mql.java.test.Examples()" />
 			</constructors>
 			<methods>
-				<method name="public void org.mql.java.test.Examples.exp04()" />
-				<method name="public void org.mql.java.test.Examples.exp01()" />
-				<method name="public void org.mql.java.test.Examples.exp03()" />
-				<method name="public void org.mql.java.test.Examples.exp02()" />
 				<method
 					name="public static void org.mql.java.test.Examples.main(java.lang.String[])" />
+				<method name="public void org.mql.java.test.Examples.exp02()" />
+				<method name="public void org.mql.java.test.Examples.exp03()" />
+				<method name="public void org.mql.java.test.Examples.exp04()" />
+				<method name="public void org.mql.java.test.Examples.exp01()" />
 			</methods>
 			<superclass>java.lang.Object</superclass>
 			<interfaces />

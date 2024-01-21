@@ -14,11 +14,6 @@ public class RelationshipDetector {
                 detectRelatedClasses(aClass, aPackage.getClasses());
 
 
-                // Détecter les classes agrégées
-                detectAggregatedClasses(aClass, aPackage.getClasses());
-
-                // Détecter les classes composées
-                detectComposedClasses(aClass, aPackage.getClasses());
             }
         }
     }
@@ -27,7 +22,10 @@ public class RelationshipDetector {
         for (Field field : sourceClass.getFields()) {
             if (field.getType().toString().contains("class")) {
                 try {
+                	if(!field.getType().getName().startsWith("java") && !sourceClass.getNom().equals(field.getType().getName())) {
+                	detectTypeRelation(sourceClass, new Class(field.getType().getName()));
                 	sourceClass.addRelatedClasses(new Class(""+field.getType().getName()));
+                	}
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -36,14 +34,15 @@ public class RelationshipDetector {
     }
 
 
+    private static void detectTypeRelation(Class sourceClass , Class relationClass) {
 
-    private static void detectAggregatedClasses(Class sourceClass, List<Class> allClasses) {
-        // Logique de détection des classes agrégées
-        // À adapter en fonction de la logique spécifique
+    	
+    }
+    private static void detectAggregatedClasses(Class sourceClass,Class ClassAgg) {
+        
     }
 
-    private static void detectComposedClasses(Class sourceClass, List<Class> allClasses) {
-        // Logique de détection des classes composées
-        // À adapter en fonction de la logique spécifique
+    private static void detectComposedClasses(Class sourceClass, Class ClassComp) {
+        
     }
 }

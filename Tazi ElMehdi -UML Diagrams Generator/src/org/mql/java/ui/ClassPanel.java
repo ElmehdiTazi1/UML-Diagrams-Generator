@@ -7,18 +7,31 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
 import org.mql.java.models.Class;
+
 public class ClassPanel extends JPanel {
 
     private static final long serialVersionUID = 1L;
     private Class myClass;
 
-    public ClassPanel(Class myClass) {
+    public Class getMyClass() {
+		return myClass;
+	}
+
+	public void setMyClass(Class myClass) {
+		this.myClass = myClass;
+	}
+
+	public ClassPanel(Class myClass) {
         this.myClass = myClass;
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
         setLayout(new BorderLayout());
-        setPreferredSize(new Dimension(300, calculateContentHeight()));
 
         initComponents();
+    }
+
+    @Override
+    public String toString() {
+        return "ClassPanel [myClass=" + myClass.getNom() + "]";
     }
 
     private void initComponents() {
@@ -28,10 +41,10 @@ public class ClassPanel extends JPanel {
         titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
         titleContainer.add(titleLabel);
 
-        // nom de la class
+        // Nom de la classe
         add(titleContainer, BorderLayout.NORTH);
 
-        // fields
+        // Fields
         JPanel fieldsPanel = new JPanel();
         fieldsPanel.setLayout(new BoxLayout(fieldsPanel, BoxLayout.Y_AXIS));
 
@@ -72,23 +85,4 @@ public class ClassPanel extends JPanel {
 
         add(new JScrollPane(methodsPanel), BorderLayout.SOUTH);
     }
-
-    private int calculateContentHeight() {
-        int totalHeight = 0;
-
-        
-        for (Field field : myClass.getFields()) {
-            totalHeight += 10; 
-        }
-
-        totalHeight += 5; 
-
-        for (Method method : myClass.getMethods()) {
-            totalHeight += 10;
-        }
-
-        return totalHeight;
-    }
-
-
 }

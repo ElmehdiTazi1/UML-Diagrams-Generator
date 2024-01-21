@@ -1,0 +1,157 @@
+<?xml version="1.0" ?>
+<class_diagram>
+	<class name="org.mql.java.model.Author$InnerClass">
+		<fields>
+			<field name="-innerData:String"></field>
+			<field name="+this$0:Author"></field>
+		</fields>
+		<methods>
+			<method name="+setInnerData(String arg0):void"></method>
+			<method name="+getInnerData():String"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+			<relation type="association"
+				target="org.mql.java.model.Author"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.model.Author">
+		<fields>
+			<field name="-nom:String"></field>
+			<field name="-prenom:String"></field>
+			<field name="-d:Date"></field>
+			<field name="-id:int"></field>
+			<field name="-pere:Author"></field>
+		</fields>
+		<methods>
+			<method name="+test():void"></method>
+			<method name="+getId():int"></method>
+			<method name="+getNom():String"></method>
+			<method name="+setNom(String arg0):void"></method>
+			<method name="+getPrenom():String"></method>
+			<method name="+setD(Date arg0):void"></method>
+			<method name="+getPere():Author"></method>
+			<method name="+setPrenom(String arg0):void"></method>
+			<method name="+getD():Date"></method>
+			<method name="+setId(int arg0):void"></method>
+			<method name="+setPere(Author arg0):void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance"
+				target="org.mql.java.model.Person"></relation>
+			<relation type="association"
+				target="org.mql.java.model.Date"></relation>
+			<relation type="association"
+				target="org.mql.java.model.Author"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.model.Date">
+		<fields>
+			<field name="-day:int"></field>
+			<field name="-month:int"></field>
+			<field name="-year:int"></field>
+		</fields>
+		<methods>
+			<method name="+toString():String"></method>
+			<method name="+getYear():int"></method>
+			<method name="+getMonth():int"></method>
+			<method name="+setMonth(int arg0):void"></method>
+			<method name="+setYear(int arg0):void"></method>
+			<method name="+getDay():int"></method>
+			<method name="+setDay(int arg0):void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance"
+				target="org.mql.java.model.Author"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.model.Person">
+		<fields></fields>
+		<methods></methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.reflections.ClassParser">
+		<fields>
+			<field name="+squelette:List"></field>
+			<field name="+res:List"></field>
+		</fields>
+		<methods>
+			<method name="+parse(String arg0):Vector"></method>
+			<method name="+parser(String arg0):void"></method>
+			<method name="+getClassMethod(Class arg0):int"></method>
+			<method name="+getClassSignature(Class arg0):void"></method>
+			<method name="+getClassField(Class arg0):int"></method>
+			<method name="+affiche():void"></method>
+			<method name="+squelette(String arg0):Vector"></method>
+			<method name="+getClassConstructor(Class arg0):void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.reflections.StringMapper">
+		<fields>
+			<field name="+objs:List"></field>
+		</fields>
+		<methods>
+			<method name="+toString(Object arg0):String"></method>
+			<method name="+toDeepString(Object arg0):String"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.test.Examples">
+		<fields></fields>
+		<methods>
+			<method name="+main(String[] arg0):void"></method>
+			<method name="+exp03():void"></method>
+			<method name="+exp04():void"></method>
+			<method name="+exp01():void"></method>
+			<method name="+exp02():void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.uis.ClassParserFrame$ItemListener">
+		<fields>
+			<field name="+this$0:ClassParserFrame"></field>
+		</fields>
+		<methods>
+			<method name="+actionPerformed(ActionEvent arg0):void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="java.lang.Object"></relation>
+			<relation type="association"
+				target="org.mql.java.uis.ClassParserFrame"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.uis.ClassParserFrame">
+		<fields>
+			<field name="+serialVersionUID:long"></field>
+			<field name="-labelSize:int"></field>
+			<field name="-container:JPanel"></field>
+			<field name="-l1:JLabel"></field>
+			<field name="-t1:JTextField"></field>
+			<field name="-b:JButton"></field>
+			<field name="-res:JPanel"></field>
+		</fields>
+		<methods>
+			<method name="+add(String arg0, int arg1):void"></method>
+			<method name="+add(String arg0):void"></method>
+		</methods>
+		<relations>
+			<relation type="inheritance" target="javax.swing.JPanel"></relation>
+		</relations>
+	</class>
+	<class name="org.mql.java.uis.Result">
+		<fields></fields>
+		<methods></methods>
+		<relations>
+			<relation type="inheritance" target="javax.swing.JFrame"></relation>
+		</relations>
+	</class>
+</class_diagram>

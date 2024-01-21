@@ -23,6 +23,7 @@ public class ClassParser {
 	public static java.lang.Class<?> loadClass(File file, Boolean drapeau) {
 		java.lang.Class<?> cls = null;
 		if (drapeau) {
+			
 			try {
 				File root = new File(
 						file.getAbsolutePath().substring(0, file.getAbsolutePath().lastIndexOf("\\bin\\") + 5));

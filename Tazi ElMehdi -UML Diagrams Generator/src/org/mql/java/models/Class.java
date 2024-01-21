@@ -9,7 +9,6 @@ import java.util.Vector;
 
 import static org.mql.java.reflection.ClassParser.*;
 
-
 public class Class {
     private String nom;
     private java.lang.Class clazz;
