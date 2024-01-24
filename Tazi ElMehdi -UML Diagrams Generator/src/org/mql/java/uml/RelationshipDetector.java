@@ -23,8 +23,7 @@ public class RelationshipDetector {
             if (field.getType().toString().contains("class")) {
                 try {
                 	if(!field.getType().getName().startsWith("java") && !sourceClass.getNom().equals(field.getType().getName())) {
-                	detectTypeRelation(sourceClass, new Class(field.getType().getName()));
-                	sourceClass.addRelatedClasses(new Class(""+field.getType().getName()));
+                		sourceClass.addRelatedClasses(new Class(field.getType().getCanonicalName()));
                 	}
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -33,16 +32,4 @@ public class RelationshipDetector {
         }
     }
 
-
-    private static void detectTypeRelation(Class sourceClass , Class relationClass) {
-
-    	
-    }
-    private static void detectAggregatedClasses(Class sourceClass,Class ClassAgg) {
-        
-    }
-
-    private static void detectComposedClasses(Class sourceClass, Class ClassComp) {
-        
-    }
 }

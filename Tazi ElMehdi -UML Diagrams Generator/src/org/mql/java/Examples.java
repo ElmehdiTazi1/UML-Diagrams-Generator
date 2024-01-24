@@ -2,6 +2,7 @@ package org.mql.java;
 
 import org.mql.java.models.ProjetJava;
 import org.mql.java.ui.ClassPanel;
+import org.mql.java.ui.PackageDiagramPanel;
 import org.mql.java.ui.ClassDiagramPanel;
 import org.mql.java.uml.RelationshipDetector;
 import java.awt.Dimension;
@@ -10,13 +11,15 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import org.mql.java.dom.ClassDiagramXMLGenerator;
 import org.mql.java.dom.XMLGenerator;
+import org.mql.java.dom.XMLParser;
+import org.mql.java.dom.XmiGenerator;
 import org.mql.java.models.Class;
 import org.mql.java.models.Package;
 
 public class Examples {
 
 	public Examples() {
-		exp04();
+		exp08();
 	}
 
 	void exp01() {
@@ -30,7 +33,7 @@ public class Examples {
 					System.out.println("		Field=> " + f.getName());
 				}
 				if (c.getSupClass() != null)
-					System.out.println("		SubClass=> " + c.getSupClass().getNom());
+					System.out.println("		SubClass=> " + c.getSupClass());
 			}
 
 		}
@@ -55,8 +58,6 @@ public class Examples {
 
 	void exp04() {
 		ProjetJava project = new ProjetJava("C:/Users/Mehdi/MQL/P05-MultiThreading");
-		RelationshipDetector.detectRelationships(project);
-		ClassDiagramXMLGenerator.generateXML(project, "resources/xml/Uml.xml");
 		JFrame frame = new JFrame("Project Diagram");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ClassDiagramPanel projectPanel = new ClassDiagramPanel(project);
@@ -83,6 +84,31 @@ public class Examples {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ClassDiagramPanel projectPanel = new ClassDiagramPanel(project);
 		frame.getContentPane().add(new JScrollPane(projectPanel));
+		frame.setSize(new Dimension(800, 600));
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setVisible(true);
+	}
+	void exp07() {
+		ProjetJava project = new ProjetJava("C:/Users/Mehdi/MQL/P05-MultiThreading");
+		JFrame frame = new JFrame("Project Diagram");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ClassDiagramPanel projectPanel = new ClassDiagramPanel(project);
+		frame.getContentPane().add(new JScrollPane(projectPanel));
+		frame.setSize(new Dimension(800, 600));
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setVisible(true);
+	}
+	void exp08() {
+		ProjetJava project = new ProjetJava("C:/Users/Mehdi/MQL/P05-MultiThreading");
+        XMLParser.parse("resources/xml/UML.XML");
+	}
+	void exp09() {
+		ProjetJava project = new ProjetJava("C:/Users/Mehdi/MQL/P05-MultiThreading");
+		JFrame frame = new JFrame("Project Diagram");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		PackageDiagramPanel packageDiagramPanel = new PackageDiagramPanel(project);
+	    frame.add(packageDiagramPanel);
+		frame.getContentPane().add(new JScrollPane(packageDiagramPanel));
 		frame.setSize(new Dimension(800, 600));
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setVisible(true);

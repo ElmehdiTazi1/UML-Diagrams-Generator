@@ -11,7 +11,8 @@ import static org.mql.java.reflection.ClassParser.*;
 
 public class Class {
     private String nom;
-    private java.lang.Class clazz;
+    @SuppressWarnings("rawtypes")
+	private java.lang.Class clazz;
     private List<Field> fields;
 	@SuppressWarnings("rawtypes")
 	private List<Constructor> constructors =new Vector<Constructor>();
@@ -72,9 +73,11 @@ public class Class {
 	public void setInterfaces(List<Class> interfaces) {
 		this.interfaces = interfaces;
 	}
+	@SuppressWarnings("rawtypes")
 	public void setClazz(java.lang.Class clazz) {
 		this.clazz = clazz;
 	}
+	@SuppressWarnings("rawtypes")
 	public java.lang.Class getClazz() {
 		return clazz;
 	}

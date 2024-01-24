@@ -38,6 +38,7 @@ public class PackageExtractor {
 		}
 	}
 
+	@SuppressWarnings("static-access")
 	public void setLogger(Logger logger) {
 		this.logger = logger;
 	}

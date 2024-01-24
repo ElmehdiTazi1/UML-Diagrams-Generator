@@ -10,10 +10,10 @@ import org.mql.java.models.Class;
 
 public class ClassPanel extends JPanel {
 
-    private static final long serialVersionUID = 1L;
-    private Class myClass;
+	private static final long serialVersionUID = 1L;
+	private Class myClass;
 
-    public Class getMyClass() {
+	public Class getMyClass() {
 		return myClass;
 	}
 
@@ -22,67 +22,64 @@ public class ClassPanel extends JPanel {
 	}
 
 	public ClassPanel(Class myClass) {
-        this.myClass = myClass;
-        setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        setLayout(new BorderLayout());
+		this.myClass = myClass;
+		setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		setLayout(new BorderLayout());
 
-        initComponents();
-    }
+		initComponents();
+	}
 
-    @Override
-    public String toString() {
-        return "ClassPanel [myClass=" + myClass.getNom() + "]";
-    }
+	@Override
+	public String toString() {
+		return "ClassPanel [myClass=" + myClass.getNom() + "]";
+	}
 
-    private void initComponents() {
-        JPanel titleContainer = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        String titre = myClass.getNom();
-        JLabel titleLabel = new JLabel(titre.split("\\.")[titre.split("\\.").length - 1]);
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
-        titleContainer.add(titleLabel);
+	private void initComponents() {
+		JPanel titleContainer = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		String titre = myClass.getNom();
+		JLabel titleLabel = new JLabel(titre.split("\\.")[titre.split("\\.").length - 1]);
+		titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
+		titleContainer.add(titleLabel);
 
-        // Nom de la classe
-        add(titleContainer, BorderLayout.NORTH);
+		add(titleContainer, BorderLayout.NORTH);
 
-        // Fields
-        JPanel fieldsPanel = new JPanel();
-        fieldsPanel.setLayout(new BoxLayout(fieldsPanel, BoxLayout.Y_AXIS));
+		JPanel fieldsPanel = new JPanel();
+		fieldsPanel.setLayout(new BoxLayout(fieldsPanel, BoxLayout.Y_AXIS));
 
-        for (Field field : myClass.getFields()) {
-            String s = "+";
-            if (field.accessFlags().toString().equals("[PRIVATE]")) {
-                s = "-";
-            }
-            JLabel fieldLabel = new JLabel(s + " " + field.getName() + " : " + field.getType().getSimpleName());
-            fieldsPanel.add(fieldLabel);
-        }
+		for (Field field : myClass.getFields()) {
+			String s = "+";
+			if (field.accessFlags().toString().equals("[PRIVATE]")) {
+				s = "-";
+			}
+			JLabel fieldLabel = new JLabel(s + " " + field.getName() + " : " + field.getType().getSimpleName());
+			fieldsPanel.add(fieldLabel);
+		}
 
-        add(new JScrollPane(fieldsPanel), BorderLayout.CENTER);
+		add(new JScrollPane(fieldsPanel), BorderLayout.CENTER);
 
-        // Méthodes
-        JPanel methodsPanel = new JPanel();
-        methodsPanel.setLayout(new BoxLayout(methodsPanel, BoxLayout.Y_AXIS));
+		JPanel methodsPanel = new JPanel();
+		methodsPanel.setLayout(new BoxLayout(methodsPanel, BoxLayout.Y_AXIS));
 
-        for (Method method : myClass.getMethods()) {
-            String s = "+";
-            if (method.accessFlags().toString().equals("[PRIVATE]")) {
-                s = "-";
-            }
-            s += method.getName() + "(";
+		for (Method method : myClass.getMethods()) {
+			String s = "+";
+			if (method.accessFlags().toString().equals("[PRIVATE]")) {
+				s = "-";
+			}
+			s += method.getName() + "(";
 
-            Parameter[] parameters = method.getParameters();
-            for (int i = 0; i < parameters.length; i++) {
-                Parameter parameter = parameters[i];
-                s += parameter.getType().getSimpleName() + " " + parameter.getName();
-                if (i < parameters.length - 1) {
-                    s += ", ";
-                }
-            }
-            s += "):" + method.getReturnType().getSimpleName();
-            JLabel methodLabel = new JLabel(s);
-            methodsPanel.add(methodLabel);
-        }
+			Parameter[] parameters = method.getParameters();
+			for (int i = 0; i < parameters.length; i++) {
+				Parameter parameter = parameters[i];
+				s += parameter.getType().getSimpleName() + " " + parameter.getName();
+				if (i < parameters.length - 1) {
+					s += ", ";
+				}
+			}
+			s += "):" + method.getReturnType().getSimpleName();
+			JLabel methodLabel = new JLabel(s);
+			methodsPanel.add(methodLabel);
+		}
 
-        add(new JScrollPane(methodsPanel), BorderLayout.SOUTH);
-    }
+		add(new JScrollPane(methodsPanel), BorderLayout.SOUTH);
+	}
 }

@@ -8,7 +8,14 @@ import org.mql.java.reflection.ClassExtractor;
 public class Package {
     private String nom;
     private List<String> className;
-    private List<Class> classes= new Vector<>();
+    public List<String> getClassName() {
+		return className;
+	}
+	public void setClassName(List<String> className) {
+		this.className = className;
+	}
+
+	private List<Class> classes= new Vector<>();
 	public String getNom() {
 		return nom;
 	}

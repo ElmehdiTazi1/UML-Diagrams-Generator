@@ -9,16 +9,14 @@ import java.lang.reflect.Parameter;
 import java.lang.reflect.Type;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.List;
 import java.util.Vector;
-
-import org.mql.java.log.ConsoleLogger;
 import org.mql.java.log.LogLevel;
 import org.mql.java.log.Logger;
 import org.mql.java.models.Class;
 
 public class ClassParser {
 
+	@SuppressWarnings("rawtypes")
 	private static java.lang.Class clazz;
 	private static Logger logger;
     private static String path;
@@ -35,14 +33,14 @@ public class ClassParser {
 				cls = urlClassLoader.loadClass(getClassPackageName(file.getAbsolutePath()));
 				log(LogLevel.Class, cls.descriptorString());
 			} catch (Exception e) {
-				System.out.println("Error : " + e.getMessage());
+				System.out.println("Error  " + file);
 			}
 		} else {
 			try {
 				cls = java.lang.Class.forName("" + file);
 				log(LogLevel.Class, cls.descriptorString());
 			} catch (Exception e) {
-				System.out.println("Error " + e.getMessage());
+				System.out.println("Error +" + e.getMessage());
 			}
 		}
 		return cls;
@@ -128,11 +126,9 @@ public class ClassParser {
 		}
 	}
 	private static void setInterfaces(Class c) {
-		List<Class>interfaces = new Vector<>();
 		Type []t = c.getClazz().getGenericInterfaces();
 		for (int i = 0; i < t.length; i++) {
 			c.addInterface(new Class(t[i].getTypeName()));
-			
 		}
 	}
 	public static void init(String className, Class c) {
@@ -144,11 +140,15 @@ public class ClassParser {
 			drap = true;
 			className=s;
 		}
+		if(className.endsWith("]"))className=className.substring(0,className.indexOf("]")-1);
+		if(className.endsWith(">"))className=className.substring(0,className.indexOf("<"));
 		clazz = loadClass(new File(className), drap);
 		if(clazz!=null) {
 		if(className.contains("bin")) {
+			if(className.contains("org")) {
 			c.setPath(className.substring(0,className.indexOf("org")));
 			path=className.substring(0,className.indexOf("org"));
+			}
 		}
 		c.setClazz(clazz);
 		setNom(c);
@@ -163,6 +163,7 @@ public class ClassParser {
 
 
 
+	@SuppressWarnings("static-access")
 	public void setLogger(Logger logger) {
 		this.logger = logger;
 	}

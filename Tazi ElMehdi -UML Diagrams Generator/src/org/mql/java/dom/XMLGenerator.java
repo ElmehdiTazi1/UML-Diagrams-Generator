@@ -97,12 +97,7 @@ public class XMLGenerator {
 		}
 
 		Element interfacesElement = document.createElement("interfaces");
-//        for (Interface anInterface : aClass.getInterfaces()) {
-//            Element interfaceElement = document.createElement("interface");
-//            // Ajouter d'autres attributs de l'interface si nécessaire
-//
-//            interfacesElement.appendChild(interfaceElement);
-//        }
+
 		classElement.appendChild(interfacesElement);
 	}
 
