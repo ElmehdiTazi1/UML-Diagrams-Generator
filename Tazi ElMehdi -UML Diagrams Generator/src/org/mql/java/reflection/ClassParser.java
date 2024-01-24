@@ -10,6 +10,8 @@ import java.lang.reflect.Type;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Vector;
+
+import org.mql.java.log.ConsoleLogger;
 import org.mql.java.log.LogLevel;
 import org.mql.java.log.Logger;
 import org.mql.java.models.Class;

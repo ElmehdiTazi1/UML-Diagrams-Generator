@@ -28,7 +28,7 @@ public class PackagePanel extends JPanel {
         List<org.mql.java.models.Class> classNames = packageModel.getClasses();
         for (org.mql.java.models.Class className : classNames) {
             Panel classPanel = new Panel();
-            classPanel.add(new Label(className.getNom()));
+            classPanel.add(new Label(className.getClazz().getCanonicalName()));
             classListPanel.add(classPanel);
         }
 

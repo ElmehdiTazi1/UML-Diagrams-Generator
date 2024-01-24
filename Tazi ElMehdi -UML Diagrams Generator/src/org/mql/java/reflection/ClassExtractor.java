@@ -3,6 +3,8 @@ package org.mql.java.reflection;
 import java.io.File;
 import java.util.List;
 import java.util.Vector;
+
+import org.mql.java.log.ConsoleLogger;
 import org.mql.java.log.LogLevel;
 import org.mql.java.log.Logger;
 

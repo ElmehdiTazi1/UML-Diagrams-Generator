@@ -8,6 +8,7 @@ import org.mql.java.reflection.ClassExtractor;
 public class Package {
     private String nom;
     private List<String> className;
+	private List<Class> classes= new Vector<>();
     public List<String> getClassName() {
 		return className;
 	}
@@ -15,7 +16,6 @@ public class Package {
 		this.className = className;
 	}
 
-	private List<Class> classes= new Vector<>();
 	public String getNom() {
 		return nom;
 	}
@@ -36,6 +36,9 @@ public class Package {
 		for (String string : className) {
 			classes.add(new Class(string+".class"));
 		}		
+	}
+	public Package() {
+		
 	}
 
 }

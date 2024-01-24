@@ -2,9 +2,9 @@ package org.mql.java.ui;
 
 import javax.swing.*;
 
-import org.mql.java.dom.ClassDiagramXMLGenerator;
-import org.mql.java.dom.XMLGenerator;
 import org.mql.java.models.ProjetJava;
+import org.mql.java.xml.ClassDiagramXMLGenerator;
+import org.mql.java.xml.XMLGenerator;
 
 import java.awt.Color;
 import java.awt.Dimension;

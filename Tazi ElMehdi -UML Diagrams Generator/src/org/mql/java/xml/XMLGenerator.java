@@ -1,4 +1,4 @@
-package org.mql.java.dom;
+package org.mql.java.xml;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -59,11 +59,6 @@ public class XMLGenerator {
 		Element classElement = document.createElement("class");
 		classElement.setAttribute("name", aClass.getNom());
 		parentElement.appendChild(classElement);
-
-		Element nomElement = document.createElement("nom");
-		nomElement.appendChild(document.createTextNode(aClass.getNom()));
-		classElement.appendChild(nomElement);
-
 		Element fieldsElement = document.createElement("fields");
 		for (Field field : aClass.getFields()) {
 			Element fieldElement = document.createElement("field");

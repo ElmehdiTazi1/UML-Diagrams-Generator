@@ -10,7 +10,6 @@ public class RelationshipDetector {
     public static void detectRelationships(ProjetJava project) {
         for (Package aPackage : project.getPackages()) {
             for (Class aClass : aPackage.getClasses()) {
-                // Détecter les relations avec d'autres classes
                 detectRelatedClasses(aClass, aPackage.getClasses());
 
 

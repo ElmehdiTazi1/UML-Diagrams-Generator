@@ -1,4 +1,4 @@
-package org.mql.java.dom;
+package org.mql.java.xml;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;

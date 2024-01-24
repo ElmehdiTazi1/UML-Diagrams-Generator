@@ -1,4 +1,4 @@
-package org.mql.java.dom;
+package org.mql.java.xml;
 
 import java.io.File;
 import java.lang.reflect.Constructor;

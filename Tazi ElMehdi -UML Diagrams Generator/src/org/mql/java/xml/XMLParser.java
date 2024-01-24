@@ -1,4 +1,4 @@
-package org.mql.java.dom;
+package org.mql.java.xml;
 
 import org.mql.java.log.ConsoleLogger;
 import org.mql.java.log.LogLevel;
@@ -14,7 +14,7 @@ import java.io.File;
 
 
 public class XMLParser {
-	private static Logger logger = new ConsoleLogger();
+	private static Logger logger ;
     public static void parse(String src) {
         try {
             File xmlFile = new File(src);

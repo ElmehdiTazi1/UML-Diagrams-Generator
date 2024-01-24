@@ -3,10 +3,10 @@ package org.mql.java.models;
 import java.util.List;
 import java.util.Vector;
 
-import org.mql.java.dom.ClassDiagramXMLGenerator;
-import org.mql.java.dom.XMLGenerator;
 import org.mql.java.reflection.PackageExtractor;
 import org.mql.java.uml.RelationshipDetector;
+import org.mql.java.xml.ClassDiagramXMLGenerator;
+import org.mql.java.xml.XMLGenerator;
 
 
 
@@ -25,6 +25,9 @@ public class ProjetJava {
 	public void setPackages(List<Package> packages) {
 		this.packages = packages;
 	}
+	public void addPackage(Package p) {
+		packages.add(p);
+	}
 	private List<String> test;
 	public ProjetJava(String projectName) {
 		this.name=projectName;
@@ -36,4 +39,7 @@ public class ProjetJava {
 		ClassDiagramXMLGenerator.generateXML(this,"resources/xml/uml.xml");
 		XMLGenerator.generateXML(this, "resources/xml/project.xml");
 		}
+	public ProjetJava() {
+		
+	}
 }
