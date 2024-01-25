@@ -19,7 +19,7 @@ import org.xml.sax.helpers.DefaultHandler;
 public class SaxParser extends DefaultHandler {
 	private String projetJava, packages, c, text;
     private ProjetJava project;
-	private Logger logger = new ConsoleLogger();
+	private Logger logger= new ConsoleLogger();
     private List<Class> classes;
 
     public SaxParser() {

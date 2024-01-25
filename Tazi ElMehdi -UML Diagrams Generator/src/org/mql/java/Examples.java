@@ -23,7 +23,7 @@ import org.mql.java.models.Package;
 public class Examples {
 
 	public Examples() {
-		exp06();
+		exp02();
 	}
 
 	void exp01() {

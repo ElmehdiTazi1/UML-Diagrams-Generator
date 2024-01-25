@@ -152,6 +152,7 @@ public class ClassParser {
 			path=className.substring(0,className.indexOf("org"));
 			}
 		}
+		c.setInterface(clazz.isInterface());
 		c.setClazz(clazz);
 		setNom(c);
 		setField(c);

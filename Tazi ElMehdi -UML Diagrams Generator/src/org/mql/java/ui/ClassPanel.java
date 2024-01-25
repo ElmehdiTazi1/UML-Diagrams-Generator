@@ -36,8 +36,9 @@ public class ClassPanel extends JPanel {
 
 	private void initComponents() {
 		JPanel titleContainer = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		String titre = myClass.getNom();
-		JLabel titleLabel = new JLabel(titre.split("\\.")[titre.split("\\.").length - 1]);
+		String titre =myClass.getIsInterface()?"<<interface>>":"" ;
+		titre += myClass.getClazz().getSimpleName();
+		JLabel titleLabel = new JLabel(titre);
 		titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
 		titleContainer.add(titleLabel);
 

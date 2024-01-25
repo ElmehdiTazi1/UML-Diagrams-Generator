@@ -9,7 +9,7 @@ import org.mql.java.log.LogLevel;
 import org.mql.java.log.Logger;
 
 public class ClassExtractor {
-	private static Logger logger = new ConsoleLogger();
+	private static Logger logger= new ConsoleLogger();
 
 	public ClassExtractor() {
 	}

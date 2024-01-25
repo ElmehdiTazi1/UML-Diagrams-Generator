@@ -20,8 +20,15 @@ public class Class {
 	private Class supClass;
 	private List<Class> interfaces = new Vector<Class>();
     private List<Class> relatedClasses = new Vector<Class>();
-
-    private String path;
+    private boolean isInterface;
+    
+    public boolean getIsInterface() {
+		return isInterface;
+	}
+	public void setInterface(boolean isInterface) {
+		this.isInterface = isInterface;
+	}
+	private String path;
 	public List<Class> getRelatedClasses() {
 		return relatedClasses;
 	}
