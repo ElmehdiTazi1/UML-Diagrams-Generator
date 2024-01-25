@@ -91,6 +91,9 @@ public class MainJframe extends JFrame {
     		XMLGenerator.generateXML(project, pathXml+"/project.xml");
     	}
     }
+    public static void main(String[] args) {
+		new MainJframe();
+	}
 
 
 }
