@@ -20,7 +20,7 @@ public class ClassParser {
 
 	@SuppressWarnings("rawtypes")
 	private static java.lang.Class clazz;
-	private static Logger logger;
+	private static Logger logger = new ConsoleLogger();
     private static String path;
 	public static java.lang.Class<?> loadClass(File file, Boolean drapeau) {
 		java.lang.Class<?> cls = null;

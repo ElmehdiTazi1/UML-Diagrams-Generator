@@ -2,6 +2,7 @@ package org.mql.java;
 
 import org.mql.java.models.ProjetJava;
 import org.mql.java.ui.ClassPanel;
+import org.mql.java.ui.MainJframe;
 import org.mql.java.ui.PackageDiagramPanel;
 import org.mql.java.ui.ClassDiagramPanel;
 import org.mql.java.uml.RelationshipDetector;
@@ -22,7 +23,7 @@ import org.mql.java.models.Package;
 public class Examples {
 
 	public Examples() {
-		exp10();
+		exp06();
 	}
 
 	void exp01() {
@@ -42,7 +43,7 @@ public class Examples {
 		}
 	}
 
-	void exp07() {
+	void exp02() {
 		ProjetJava project = new ProjetJava("C:/Users/Mehdi/MQL/P05-MultiThreading");
 		JFrame frame = new JFrame("Project Diagram");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,10 +53,10 @@ public class Examples {
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setVisible(true);
 	}
-	void exp08() {
+	void exp03() {
         XMLParser.parse("resources/xml/UML.XML");
 	}
-	void exp09() {
+	void exp04() {
 		ProjetJava project = new ProjetJava("C:/Users/Mehdi/MQL/P05-MultiThreading");
 		JFrame frame = new JFrame("Project Diagram");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,7 +67,7 @@ public class Examples {
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setVisible(true);
 	}
-	void exp10() {
+	void exp05() {
 		SaxParser parser = new SaxParser();
 		ProjetJava project = parser.parse("resources/xml/project.xml");
 		JFrame frame = new JFrame("Project Diagram");
@@ -76,6 +77,9 @@ public class Examples {
 		frame.setSize(new Dimension(800, 600));
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setVisible(true);
+	}
+	void exp06() {
+		new MainJframe();
 	}
 
 	public static void main(String[] args) {

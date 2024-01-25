@@ -9,7 +9,7 @@ import org.mql.java.log.LogLevel;
 import org.mql.java.log.Logger;
 
 public class PackageExtractor {
-	private static Logger logger;
+	private static Logger logger = new ConsoleLogger();
 
 	public static List<String> extractPackages(String projectName) {
 		List<String> packages = new Vector<>();

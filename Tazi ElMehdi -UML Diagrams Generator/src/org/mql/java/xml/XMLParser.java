@@ -14,7 +14,7 @@ import java.io.File;
 
 
 public class XMLParser {
-	private static Logger logger ;
+	private static Logger logger = new ConsoleLogger();
     public static void parse(String src) {
         try {
             File xmlFile = new File(src);

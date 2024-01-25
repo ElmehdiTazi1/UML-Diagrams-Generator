@@ -32,7 +32,6 @@ public class PackagePanel extends JPanel {
             classListPanel.add(classPanel);
         }
 
-        // Utilisation de FlowLayout pour le panneau global
         setLayout(new FlowLayout(FlowLayout.CENTER));
 
         add(packageNamePanel);
